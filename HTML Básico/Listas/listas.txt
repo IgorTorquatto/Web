@@ -1,0 +1,3 @@
+Dica para economizar tempo no VSCode:
+
+<ol> li (tag de lista) * (vezes) 4 (quantidade de tags que deseja) </ol>
