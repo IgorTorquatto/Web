@@ -1,0 +1,6 @@
+chrome
+vs code
+figma
+css
+javascript
+html
