@@ -29,7 +29,7 @@ h1 {
   border: 2px solid #653DF5;
   background-color: #9D85F3;
   width: 25%;
-  height: 200px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,10 @@ flex-direction - row é o default , existe o column column reverse
   padding: 4rem;
   border: 2px solid #FFFFFF;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  flex-wrap: wrap;
-  /*flex-flow: row wrap; isso aqui aplica as duas propriedades*/
 }
+
+/*
+Os justify mais comuns são o space-between, space around, flex-start,flex-end ou center
+*/

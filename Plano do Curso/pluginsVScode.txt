@@ -1,0 +1,7 @@
+color highlight
+eslint
+figma for vs code
+live server
+code runner
+px to rem
+symbols miguel solorio
