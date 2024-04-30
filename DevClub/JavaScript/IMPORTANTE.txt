@@ -1,0 +1,12 @@
+Pontos mais importantes do JS:
+
+***
+-MAP
+-REDUCE
+-FILTER
+
+**
+-DOM
+-FOREACH
+-SLICE
+-SPLICE
