@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: #E5E5E5;
+}
+
+header{
+    color: #FFFFFF;
+    text-transform: capitalize;
+    background-color: #1B83E2;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 80px;
+}
+
+header h1{
+    font-weight: 400;
+}
+
+.box-labels{
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    color: #777777;
+}
+
+.box-labels p{
+    margin-left: 30%;
+}
+
+.box-labels select,.box-labels input{
+    color: #555555;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    height: 60px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button{
+    background-color: #1B83E2;
+    height: 48px;
+    width: 40%;
+    border-radius: 20px;
+    color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 30px  30%;
+}
+
+section{
+    border: #1B83E2 solid 2px;
+    padding: 30px;
+    margin: 0 30%;
+    border-radius: 10px;
+}
+
+section div{
+   text-align: center;
+}
+
+section img{
+    margin: 10px 50%;
+}
+section div p{
+    color: #777777;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width:700px){
+
+    .box-labels p{
+        margin-left: 10%;
+    }
+
+    .box-labels select, .box-labels input{
+        width: 80%;
+    }
+
+    button{
+        margin: 30px 10%;
+        width: 80%;
+    }
+}
