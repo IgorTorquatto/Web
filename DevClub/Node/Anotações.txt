@@ -1,0 +1,24 @@
+Iniciar projeto Node:
+
+Na pasta que deseja criar o projeto
+
+npm init
+npm init -y
+
+Express:
+
+npm install express 
+
+
+Gerenciador de pacotes:
+
+Nunca eviar a node modules pro github
+Ao enivar os arquivos para alguém, não enviar o node_modules
+Podemos instalar todas as dependências necessárias com o comando:
+
+npm install
+
+
+- package.json -> versões das bibliotecas
+- node_modules -> dependências para executar o projeto
+- package-lock.json -> Guarda infos das extensões
