@@ -1,20 +1,41 @@
-//Index.js é um exemplo de servidor e para ele executar precisamos passar os seguintes comandos no terminal:
-// node index.js
-// A aplicação estará executando na porta 3000 do localhost
-
-//Importação
 const express = require('express')
-port = 3000
-
-//Colocado express dentro da variável app
+const uuid = require('uuid')
 const app = express()
+app.use(express.json()) 
+const port = 3000
 
-//Criando rota:
-app.get('/users', (request,response)=>{
-    return response.send('Hello Express!')
+const users = []
+
+app.get('/users',(req,res)=>{
+    return res.json(users)
 })
 
-//Porta que está rodando
-app.listen(port, ()=>{
-    console.log(`Server run on port ${port}`)
+//Body params
+app.post('/users',(req,res)=>{
+    const {name, age} = req.body
+    const user = { id : uuid.v4(), name,  age}
+    users.push(user)
+    return res.status(201).json(user)
 })
+
+//Route params
+app.put('/users/:id',(req,res)=>{
+    const {name, age} = req.body
+    const {id} = req.params
+
+    const updateUser = {id,name,age}
+
+    //ACHAR
+    //retornar o indice do usuario pelo id
+    const index = users.findIndex(user => user.id === id) // se não encontrar reotrna -1
+
+    if( index < 0){
+        return res.status(404).json({message: "User not found"})
+    }
+
+    //ATUALIZAR
+    users[index] = updateUser
+
+    return res.status(200).json(updateUser)
+})
+app.listen(port)
