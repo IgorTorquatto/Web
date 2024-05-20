@@ -1,0 +1,14 @@
+Query params:
+http://localhost:3000/users?name=Igor&age=22
+
+Usado em filtros
+
+Route Params:
+/users/2
+
+buscar,deletar ou atualizar algo
+
+Body Request:
+JSON
+{"name": "Exemplo",
+"age": 23}

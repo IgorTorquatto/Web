@@ -22,3 +22,7 @@ npm install
 - package.json -> versões das bibliotecas
 - node_modules -> dependências para executar o projeto
 - package-lock.json -> Guarda infos das extensões
+
+
+Executar servidor node:
+npm run dev
