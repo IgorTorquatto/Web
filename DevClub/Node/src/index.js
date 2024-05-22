@@ -5,6 +5,23 @@ app.use(express.json())
 const port = 3000
 
 const users = []
+//Middleware -> Tem o poder de para ou alterar os dados da requisição
+//Ex de middleware:
+
+const checkUserId = (request,response,next)=>{
+     const { id } = request.params
+     const index = users.findIndex(user => user.id ===id)
+
+     if( index < 0 ){
+        return response.status(404).json({error:"User not found"})
+     }
+
+     //altera os dados
+     request.userIndex = index
+     request.userId = id
+
+     next()
+}
 
 app.get('/users',(req,res)=>{
     return res.json(users)
@@ -19,23 +36,23 @@ app.post('/users',(req,res)=>{
 })
 
 //Route params
-app.put('/users/:id',(req,res)=>{
+app.put('/users/:id',checkUserId,(req,res)=>{
     const {name, age} = req.body
-    const {id} = req.params
-
+    const {id} = req.userId
+    const index = req.userIndex
     const updateUser = {id,name,age}
 
-    //ACHAR
-    //retornar o indice do usuario pelo id
-    const index = users.findIndex(user => user.id === id) // se não encontrar reotrna -1
-
-    if( index < 0){
-        return res.status(404).json({message: "User not found"})
-    }
-
-    //ATUALIZAR
     users[index] = updateUser
 
-    return res.status(200).json(updateUser)
+    return res.json(updateUser)
 })
+
+app.delete('/users/:id',checkUserId,(req,res)=>{
+    const index = req.userIndex
+
+    users.splice(index,1)
+
+    return res.status(204).json()
+})
+
 app.listen(port)

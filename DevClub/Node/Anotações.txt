@@ -1,14 +1,20 @@
 Iniciar projeto Node:
 
-Na pasta que deseja criar o projeto
+[Passos de instalação]
+*Na pasta que deseja criar o projeto
 
 npm init
 npm init -y
 
-Express:
+*Express:
 
 npm install express 
 
+Criar um .gitignore e adicionar o node_modules
+Criar uma pasta src para colocas os arquivos JS e atualizar no package.json o caminho "main" par ao index.js
+Instalar nodemon
+No package.json criar , em scripts, o comando dev: 
+"dev": "nodemon"
 
 Gerenciador de pacotes:
 
