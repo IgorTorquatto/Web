@@ -29,10 +29,20 @@ app.get('/users',(req,res)=>{
 
 //Body params
 app.post('/users',(req,res)=>{
+    try{
     const {name, age} = req.body
+
+    if (age < 18) throw new Error("Only allowed over 18 years old")
+
     const user = { id : uuid.v4(), name,  age}
     users.push(user)
+
     return res.status(201).json(user)
+
+    }catch(err){
+        return res.status(400).json({error: err.message})
+    }
+    
 })
 
 //Route params
