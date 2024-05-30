@@ -1,22 +1,48 @@
 import React from 'react'
-import {Container,Img,ContainerItems,H1,InputLabel,Input,Button} from './styles'
+import { Container, Img, ContainerItems, H1, InputLabel, Input, Button, User } from './styles'
 import People from './assets/people talking.svg'
 import Arrow from './assets/arrow-right.svg'
+import Trash from './assets/trash.svg'
+import { useState, useRef } from 'react'
 
 function App() {
+
+  //Estado ( React Hook)
+  const [users, setUsers] = useState([])
+  const inputName = useRef()
+  const inputAge = useRef()
+
+  const addNewUser = () => {
+    //spread operator
+    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])
+  }
+
+
   return (
     <Container>
-      <Img alt="logo-image" src={People}/>
+      <Img alt="logo-image" src={People} />
       <ContainerItems>
         <H1>Olá!</H1>
-    
+
         <InputLabel>Nome</InputLabel>
-        <Input placeholder='Nome'/>
+        <Input ref={inputName} placeholder='Nome' />
 
         <InputLabel>Idade</InputLabel>
-        <Input placeholder='Idade'/>
+        <Input ref={inputAge} placeholder='Idade' />
 
-        <Button>Cadastrar <img alt="arrow" src={Arrow} /></Button>
+        <Button onClick={addNewUser}>Cadastrar <img alt="arrow" src={Arrow} /></Button>
+
+        <ul>
+          {
+            users.map((user) => (
+              <User key={user.id}>
+                <p>{user.name}</p>
+                <p>{user.age}</p>
+                <button><img alt="image-trash" src={Trash} /></button>
+              </User>
+            ))
+          }
+        </ul>
       </ContainerItems>
     </Container>
   )
