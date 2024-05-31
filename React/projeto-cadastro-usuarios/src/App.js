@@ -3,7 +3,7 @@ import { Container, Img, ContainerItems, H1, InputLabel, Input, Button, User } f
 import People from './assets/people talking.svg'
 import Arrow from './assets/arrow-right.svg'
 import Trash from './assets/trash.svg'
-import { useState, useRef } from 'react'
+import { useState, useRef,useEffect } from 'react'
 import axios from 'axios'
 
 function App() {
@@ -16,24 +16,43 @@ function App() {
   //Concetar com back-end
   async function addNewUser() {
 
-    const data = await axios.post("http://localhost:3001/users",{  //endereço do backend
+    const { data:newUser } = await axios.post("http://localhost:3001/users",{  //endereço do backend
       name: inputName.current.value, 
       age: inputAge.current.value }) // informações que são enviadas no body
 
-    console.log(data);
+    console.log(newUser);
 
     //spread operator
-    // setUsers([
-     // ...users,
-       //{ id: Math.random(),
-       //  name: inputName.current.value,
-         // age: inputAge.current.value }])
+    setUsers([
+      ...users,
+       newUser])
 
   }
 
-  const deleteUser = (userId)=>{
+  //cria o efeito colateral de que sempre que o estado do que estiver dentro dos []  mudar ele chama essa função que pega os usuarios do backend ex: podemos colocar[users]
+  //Essa função sempre é chamada ao carregar a página uma primeira vez 
+  // como ela pega dados do backend devemos usar o async await e com essa peculiaridade de ser diferente da forma tradicional porque useeffect não aceita o async
+  useEffect(()=>{
+
+    async function fetchUsers(){
+      const {data: newUsers} = await axios.get("http://localhost:3001/users")
+
+      setUsers(newUsers)
+    }
+
+    fetchUsers()
+  },[])
+
+
+  async function deleteUser(userId){
+
+    //No front end:
     const newUsers = users.filter(user => user.id !== userId)
     setUsers(newUsers)
+
+    //No backend:
+    await axios.delete(`http://localhost:3001/users/${userId}`)
+
   }
 
   return (
