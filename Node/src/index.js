@@ -1,8 +1,12 @@
+const cors = require('cors')
 const express = require('express')
 const uuid = require('uuid')
+
+const port = 3001
 const app = express()
 app.use(express.json()) 
-const port = 3000
+app.use(cors())
+
 
 const users = []
 //Middleware -> Tem o poder de para ou alterar os dados da requisição
@@ -65,4 +69,6 @@ app.delete('/users/:id',checkUserId,(req,res)=>{
     return res.status(204).json()
 })
 
-app.listen(port)
+app.listen(port,()=>{
+    console.log(`Server run on ${port}`);
+})

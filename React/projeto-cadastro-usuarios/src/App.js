@@ -4,6 +4,7 @@ import People from './assets/people talking.svg'
 import Arrow from './assets/arrow-right.svg'
 import Trash from './assets/trash.svg'
 import { useState, useRef } from 'react'
+import axios from 'axios'
 
 function App() {
 
@@ -12,9 +13,22 @@ function App() {
   const inputName = useRef()
   const inputAge = useRef()
 
-  const addNewUser = () => {
+  //Concetar com back-end
+  async function addNewUser() {
+
+    const data = await axios.post("http://localhost:3001/users",{  //endereço do backend
+      name: inputName.current.value, 
+      age: inputAge.current.value }) // informações que são enviadas no body
+
+    console.log(data);
+
     //spread operator
-    setUsers([...users, { id: Math.random(), name: inputName.current.value, age: inputAge.current.value }])
+    // setUsers([
+     // ...users,
+       //{ id: Math.random(),
+       //  name: inputName.current.value,
+         // age: inputAge.current.value }])
+
   }
 
   const deleteUser = (userId)=>{
