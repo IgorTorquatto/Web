@@ -1,0 +1,30 @@
+Front-> instalar axios
+usar asyn await para enviar os dados capturados no input para o backend
+usar método e rota corretos
+colocar endereço e objeto com dados que o back espera receber
+
+
+Back->
+instalar o cors
+habilitar o cors com app use
+
+
+Como navegar entre telas?
+
+Criar uma pasta em src com o nome "containers" ou "pages"
+Dentro de "containers/pages" criar uma subpasta para cada tela ex: pasta "Home" com os arquivos dessa página: "index.js" e "styles.js"
+Por convenção a identificação do arquivo se refere ao nome da pasta , logo dentro de cada pasta (Home,Users,... )existe um arquivo index.js e para chamar esse componente podemos chamar o nome da pasta ex: <Home />
+
+Como fica a arquitetura de pastas do projeto em uma aplicação?
+containers-> telas 
+styles-> globalstyle.js
+assets-> arquivos de mídia
+
+
+Rotas?
+
+Instala o react-router-dom
+Cria um arquivo "routes.js" no src
+Faz as importações do Router,Switch e Route do react-router-dom
+Cria e exporta uma função que deve ter o Router envolvendo um Routes que deve ter toda Route da aplicação
+Cada Route deve ter 2 infos -> *path= endereço e *component= que vai ser renderizado

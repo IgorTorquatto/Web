@@ -1,0 +1,7 @@
+foi criado um projeto react com o yarn
+excluimos os itens desnecessarios do react e deixamos somente os essenciais sendo eles: src-> index.js app.js public-> index.html e favicon
+criamos um gitignore para adicionar a node_modules
+criamos os estilos css como arquivos js sendo um global, que deve ser adicionado no index.js, e um para os styled components
+No app.js criamos nosso html e estilizamos com o arquivo style.js dos styled components
+sempre se atentar para as importações corretas
+para utilizar a fonte correta fazemos igual faziamos sem react , pegando do google fonts e adicionando ao index.html e depois adicionando o font family no arquivo de estilização global
