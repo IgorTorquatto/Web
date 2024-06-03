@@ -19,7 +19,7 @@ Como fica a arquitetura de pastas do projeto em uma aplicação?
 containers-> telas 
 styles-> globalstyle.js
 assets-> arquivos de mídia
-
+components-> componentes que podem ser replicados na aplicação
 
 Rotas?
 
@@ -27,4 +27,22 @@ Instala o react-router-dom
 Cria um arquivo "routes.js" no src
 Faz as importações do Router,Switch e Route do react-router-dom
 Cria e exporta uma função que deve ter o Router envolvendo um Routes que deve ter toda Route da aplicação
-Cada Route deve ter 2 infos -> *path= endereço e *component= que vai ser renderizado
+Cada Route deve ter 2 infos -> *path= endereço e *element= que vai ser renderizado
+
+Navegar entre rotas?
+
+Link:
+
+Importamos o Link do react-router-dom e aplicamos o atributo path que recebe a rota que deve ser encaminhada
+Podemos importar o Link no styles e utilizar o styled-component
+
+useNavigate:
+
+import { useNavigate } from 'react-router-dom'
+navigate(-1) -> goBack
+navigate("/caminho") -> outras rotas
+
+Component
+
+Na pasta component podemos criar novas pastas , cada uma com seu index.js e styles.js , semelhante as paginas na pasta containers, dessa forma criamos nossos componentes
+Utilizamos as props para passarmos infos da página para o component
