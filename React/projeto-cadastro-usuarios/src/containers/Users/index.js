@@ -1,16 +1,19 @@
 import React from 'react'
-import { Container, Img, ContainerItems, H1, Button, User } from './styles'
+import { Container, Img, Button, User } from './styles'
 import Avatar from '../../assets/User Profile_Monochromatic 2.svg'
 import Arrow from '../../assets/arrow-left.png'
 import Trash from '../../assets/trash.svg'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { H1 } from '../../components/Title/styles'
+import ContainerItems from '../../components/ContainerItens'
 
 function Users() {
 
   //Estado ( React Hook)
   const [users, setUsers] = useState([])
- 
+  const navigate = useNavigate()
 
   //cria o efeito colateral de que sempre que o estado do que estiver dentro dos []  mudar ele chama essa função que pega os usuarios do backend ex: podemos colocar[users]
   //Essa função sempre é chamada ao carregar a página uma primeira vez 
@@ -38,10 +41,14 @@ function Users() {
 
   }
 
+  function goBackPage(){
+    navigate(-1)
+  }
+
   return (
     <Container>
       <Img alt="logo-image" src={Avatar} />
-      <ContainerItems>
+      <ContainerItems isBlur= { true }> 
         <H1>Usuários</H1>
 
         <ul>
@@ -56,7 +63,7 @@ function Users() {
           }
         </ul>
 
-        <Button > <img alt="arrow" src={Arrow} /> Voltar </Button>
+        <Button onClick={goBackPage}> <img alt="arrow" src={Arrow} /> Voltar </Button>
 
       </ContainerItems>
     </Container>

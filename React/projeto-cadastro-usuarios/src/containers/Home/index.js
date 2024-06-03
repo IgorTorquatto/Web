@@ -1,9 +1,12 @@
 import React from 'react'
-import { Container, Img, ContainerItems, H1, InputLabel, Input, Button } from './styles'
+import { Container, Img, InputLabel, Input, Button } from './styles'
 import People from '../../assets/people talking.svg'
 import Arrow from '../../assets/arrow-right.svg'
 import { useState, useRef } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import H1 from '../../components/Title'
+import ContainerItems from '../../components/ContainerItens'
 
 function Home() {
 
@@ -11,6 +14,7 @@ function Home() {
   const [users, setUsers] = useState([])
   const inputName = useRef()
   const inputAge = useRef()
+  const navigate = useNavigate()
 
   //Concetar com back-end
   async function addNewUser() {
@@ -25,6 +29,8 @@ function Home() {
     setUsers([
       ...users,
        newUser])
+
+    navigate('/usuarios')
 
   }
 
