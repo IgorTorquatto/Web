@@ -32,3 +32,16 @@ npm install
 
 Executar servidor node:
 npm run dev
+
+Códigos de Status HTTP Comuns e Quando Usá-los:
+
+200 OK: Quando a requisição é bem-sucedida e o servidor retorna os dados solicitados (ex: geralmente em GET)
+201 Created: Quando um novo recurso é criado com sucesso. (ex: geralmente em POST)
+204 No Content: Quando a atualização de um recurso é bem-sucedida, mas não há conteúdo para retornar. (ex: geralmente em PUT/DELETE)
+
+Outras Considerações de Status HTTP
+400 Bad Request: Quando a requisição tem um erro de sintaxe ou dados inválidos.
+401 Unauthorized: Quando a requisição requer autenticação, mas não foi fornecida ou é inválida.
+403 Forbidden: Quando a autenticação é válida, mas o cliente não tem permissão para acessar o recurso.
+404 Not Found: Quando o recurso solicitado não é encontrado no servidor. (ex: Usamos bastante quando não encontramos um índice no array)
+500 Internal Server Error: Quando ocorre um erro inesperado no servidor.
