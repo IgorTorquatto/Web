@@ -1,0 +1,56 @@
+1 - Como funciona uma Promise?
+
+R:  São ações futuras executadas de forma assíncrona em nossos códigos. Dessa forma, não sabemos ao certo qual será o seu estado final. Ela permanece pendente (pending), e se der tudo certo, essa promessa será resolvida (fulfilled). Caso contrário, ela será rejeitada (rejected) e retornará um erro.
+
+2 - Qual a diferença de Promise para Async Await?
+
+R: Uma Promise é uma maneira de lidar com operações assíncronas no JavaScript usando callbacks encadeados. O async/await é uma abordagem mais moderna que torna o código assíncrono mais legível. Ao invés de usar promise.then e passar um callback você apenas utiliza await.
+
+3 - O que é uma Closure?
+
+R: Uma closure é tipo uma memória extra que uma função carrega com ela. Ela guarda pedaços do ambiente em que foi criada, então a função pode lembrar de coisas, como variáveis, mesmo depois de ter terminado de rodar.
+
+4 - Qual a diferença entre um for e um map?
+
+R: O "for" é um loop que percorre uma lista de itens e realiza operações em cada item usando índices. O "map" é uma função específica em JavaScript que cria uma nova lista, transformando cada item da lista original.
+
+5 - Como o método reduce funciona?
+
+R: O método "reduce" é como uma calculadora para as listas no JavaScript. Você fornece uma função que combina os itens da lista gradualmente, acumulando um resultado final. A cada passo, o resultado anterior e o próximo item são usados como parâmetros para a função. No final, você tem um único resultado, é tipo somar todos os números de uma lista.
+
+6 - Qual a feature que você mais gosta do ES7?
+
+R: Essa pergunta é pessoal, mas a minha preferida é o "includes", que permite verificar de forma simples se um elemento está no array, sem precisar usar métodos complexos como "indexOf".
+
+7 - Como o Webpack funciona?
+
+R: O Webpack é como um empacotador mágico para JavaScript e recursos da web. Ele pega todos os seus arquivos espalhados e os organiza em um pacote otimizado. Funciona com módulos, como peças de um quebra-cabeça, e também pode processar outros tipos de arquivos, como CSS e imagens. No final, você obtém um único arquivo ou vários arquivos agrupados, prontos para serem usados em uma página web.
+
+8 - Me explica a pirâmide de testes. Testes unitários, integração e end-to-end, e quais ferramentas podemos utilizar para cada uma dessas fases.
+
+R: A pirâmide de testes é uma ideia que sugere como organizar seus testes. Na base, temos testes unitários, que verificam partes pequenas do código. No meio, estão os testes de integração, que verificam como essas partes funcionam juntas. No topo, os testes end-to-end, que simulam ações completas do usuário. A ideia é ter mais testes na base (unitários) para uma base sólida de confiabilidade.
+
+Ferrametas:
+
+Unitários: Jest, Mocha.
+Integração: Cypress, Protractor, Supertest.
+End-to-End: Selenium, Cypress, Puppeteer.
+9 - Por quê code splitting é tão importante?
+
+R: Code splitting é importante porque ajuda a dividir seu código em partes menores, o que acelera o carregamento dos sites. Então os usuários não precisam baixar todo o código de uma vez, o que melhora na velocidade de carregamento e na experiência do usuário, e também ajuda a economizar recursos do servidor.
+
+10 - O que é uma função pura?
+
+R: Uma função pura é como uma máquina que sempre produz o mesmo resultado para a mesma entrada, sem efeitos colaterais. Ela não modifica nada fora dela, tornando os resultados previsíveis e fáceis de testar. É como uma receita de bolo: se você seguir os passos exatamente da mesma maneira, sempre obterá o mesmo bolo.
+
+11 - O que é Babel?
+
+R: Babel é um tradutor mágico para JavaScript, que converte código moderno em JavaScript mais antigo, para que funcione em navegadores mais antigos e que não entendem os recursos mais recentes da linguagem. É como se tornar fluente em todos os dialetos do JavaScript, para que seu código funcione em qualquer lugar.
+
+12 - Como o Promise race funciona?
+
+R: O Promise.race é como uma corrida de cavalos entre Promises. Você coloca várias Promises na largada e a primeira que resolver (ou rejeitar) vence a corrida. Então você pega o resultado da Promise vencedora, e ignora as outras. É uma maneira de lidar com várias tarefas assíncronas e ficar com a mais rápida.
+
+13 - Por que você gosta de TypeScript? Quais são as vantagens?
+
+R: Essa é outra pergunta pessoal. O que eu mais gosto no TypeScript é que ele torna o código mais seguro e fácil de entender, isso ajuda a evitar erros e facilita o desenvolvimento em equipe. As vantagens são que ele adiciona tipagem estática ao código do JavaScript, e tem uma excelente integração com ferramentas de desenvolvimento, oferecendo autocomplete, que faz a programação ser muito mais produtiva.

@@ -1,0 +1,19 @@
+JavaScript:
+
+Qual a diferença entre equality operator e strict equality operator?
+O que é uma funçãode priemeira classe? Ela é disponível em JS?
+O que é uma High Order Function?
+O que é uma função unária?
+O que é IIFE?
+
+Reactjs:
+
+O que é o React? (LIB)
+Quais as principais features do JS?
+O que é JSX?
+Qual a diferença de um Element e Component?
+Quando utilizar class component ao invés de function component?
+Como criar um componente em React?
+O que é um state no React?
+O que são props no React?
+Qual a diferença entre props e state?
