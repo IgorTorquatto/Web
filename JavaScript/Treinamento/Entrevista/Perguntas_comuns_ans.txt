@@ -1,0 +1,76 @@
+Claro, vamos responder cada uma das suas perguntas.
+
+### JavaScript
+
+1. **Qual a diferença entre equality operator e strict equality operator?**
+   - O `equality operator` (`==`) compara dois valores após converter seus tipos se forem diferentes. Por exemplo, `5 == '5'` retorna `true` porque os tipos são convertidos antes da comparação.
+   - O `strict equality operator` (`===`) compara dois valores sem converter seus tipos. Ambos os valores e os tipos devem ser iguais para que a comparação retorne `true`. Por exemplo, `5 === '5'` retorna `false` porque os tipos são diferentes.
+
+2. **O que é uma função de primeira classe? Ela é disponível em JS?**
+   - Uma função de primeira classe é uma função que pode ser tratada como qualquer outra variável. Isso significa que pode ser atribuída a uma variável, passada como argumento para outras funções e retornada por outras funções.
+   - Sim, funções de primeira classe são disponíveis em JavaScript.
+
+3. **O que é uma High Order Function?**
+   - Uma High Order Function (Função de Ordem Superior) é uma função que pode receber outras funções como argumentos e/ou retornar uma função como resultado. Exemplos comuns em JavaScript são as funções `map`, `filter` e `reduce`.
+
+4. **O que é uma função unária?**
+   - Uma função unária é uma função que aceita exatamente um argumento. Em JavaScript, você pode criar uma função unária simplesmente declarando uma função com um único parâmetro.
+
+5. **O que é IIFE?**
+   - IIFE significa "Immediately Invoked Function Expression". É uma função que é definida e imediatamente invocada. É frequentemente usada para criar um escopo local e evitar poluir o escopo global. Exemplo:
+     ```javascript
+     (function() {
+         console.log("IIFE executada!");
+     })();
+     ```
+
+### ReactJS
+
+1. **O que é o React?**
+   - O React é uma biblioteca JavaScript de código aberto para construir interfaces de usuário, especialmente para aplicativos de página única. Ele permite criar componentes reutilizáveis que podem gerenciar seu próprio estado.
+
+2. **Quais as principais features do React?**
+   - Componentes: Reutilizáveis e encapsulados.
+   - JSX: Uma sintaxe semelhante a HTML para escrever elementos React.
+   - Virtual DOM: Uma representação leve do DOM real para melhorar o desempenho.
+   - Estado e Propriedades: Mecanismos para gerenciar dados e comunicação entre componentes.
+   - Hooks: Funções que permitem usar estado e outros recursos do React em componentes funcionais.
+
+3. **O que é JSX?**
+   - JSX é uma extensão de sintaxe para JavaScript que permite escrever HTML diretamente dentro do código JavaScript. Ele torna a criação de componentes React mais intuitiva e legível. O JSX é compilado para chamadas `React.createElement()`.
+
+4. **Qual a diferença de um Element e Component?**
+   - Element: É a menor unidade no React. Um elemento descreve o que você quer ver na tela. Ele é imutável.
+   - Component: É uma função ou classe que pode retornar um elemento React. Os componentes podem ter estado e métodos de ciclo de vida.
+
+5. **Quando utilizar class component ao invés de function component?**
+   - Class Component: Usado quando você precisa de métodos de ciclo de vida ou quando você precisa de mais controle sobre a lógica do componente. No entanto, com a introdução dos Hooks, muitos casos de uso de componentes de classe podem ser cobertos por componentes funcionais.
+   - Function Component: Mais simples e recomendado para a maioria dos casos. Com Hooks, você pode gerenciar estado e efeitos colaterais em componentes funcionais.
+
+6. **Como criar um componente em React?**
+   - Componente de Função:
+     ```javascript
+     function MyComponent() {
+         return <div>Hello, World!</div>;
+     }
+     ```
+   - Componente de Classe:
+     ```javascript
+     class MyComponent extends React.Component {
+         render() {
+             return <div>Hello, World!</div>;
+         }
+     }
+     ```
+
+7. **O que é um state no React?**
+   - O estado (state) é um objeto que armazena valores que podem mudar ao longo do tempo. É usado para gerenciar e controlar como os componentes se comportam e exibem dados dinâmicos.
+
+8. **O que são props no React?**
+   - Props (propriedades) são argumentos passados para componentes React. Elas são imutáveis e permitem a comunicação de dados de um componente pai para um componente filho.
+
+9. **Qual a diferença entre props e state?**
+   - Props: Dados que são passados para componentes de cima para baixo (comunicação pai para filho). São imutáveis dentro do componente que as recebe.
+   - State: Dados que são gerenciados dentro de um componente. O estado é mutável e pode mudar ao longo do tempo, desencadeando uma nova renderização do componente.
+
+Se precisar de mais informações ou exemplos, estou à disposição!

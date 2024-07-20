@@ -10,3 +10,8 @@ Pontos mais importantes do JS:
 -FOREACH
 -SLICE
 -SPLICE
+
+REACT:
+
+***
+-HOOKS
